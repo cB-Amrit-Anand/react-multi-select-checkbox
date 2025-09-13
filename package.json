@@ -1,13 +1,15 @@
 {
   "name": "@amrit981/react-multi-select-checkbox",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "React multi select option using checkbox",
   "files": [
     "dist"
   ],
   "main": "dist/index.cjs",
   "types": "dist/index.d.ts",
-  "sideEffects": ["**/*.css"],
+  "sideEffects": [
+    "**/*.css"
+  ],
   "publishConfig": {
     "access": "public"
   },
