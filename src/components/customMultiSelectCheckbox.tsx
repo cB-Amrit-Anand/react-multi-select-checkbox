@@ -6,9 +6,7 @@ export type MultiSelectOption<T extends string | number = string> = {
     value: T;
 };
 
-export interface CustomMultiSelectCheckboxProps<
-    T extends string | number = string
-> {
+export interface CustomMultiSelectCheckboxProps<T extends string | number = string> {
     options?: MultiSelectOption<T>[];
     placeholder?: string;
     value?: MultiSelectOption<T>[];
@@ -21,17 +19,15 @@ function CustomMultiSelectCheckbox<T extends string | number = string>({
     value = [],
     onChange,
 }: CustomMultiSelectCheckboxProps<T>) {
-    const [isOpen, setIsOpen] = React.useState < boolean > (false);
-    const [selected, setSelected] = React.useState < MultiSelectOption < T > [] > (value);
-    const [search, setSearch] = React.useState < string > ('');
-    const wrapperRef = React.useRef < HTMLDivElement | null > (null);
+    const [isOpen, setIsOpen] = React.useState<boolean>(false);
+    const [selected, setSelected] = React.useState<MultiSelectOption<T>[]>(value);
+    const [search, setSearch] = React.useState<string>('');
+    const wrapperRef = React.useRef<HTMLDivElement | null>(null);
 
-    // Keep internal state in sync if parent updates `value`
     React.useEffect(() => {
         setSelected(value);
     }, [value]);
 
-    // Close on outside click
     React.useEffect(() => {
         const handleClickOutside = (e: MouseEvent) => {
             if (wrapperRef.current && e.target instanceof Node && !wrapperRef.current.contains(e.target)) {
@@ -42,7 +38,6 @@ function CustomMultiSelectCheckbox<T extends string | number = string>({
         return () => document.removeEventListener('mousedown', handleClickOutside);
     }, []);
 
-    // Filter options based on search
     const filteredOptions = options.filter((opt) =>
         opt.label.toLowerCase().includes(search.toLowerCase())
     );
@@ -58,7 +53,7 @@ function CustomMultiSelectCheckbox<T extends string | number = string>({
 
         const exists = selected.some((sel) => sel.value === val);
         const option = options.find((opt) => opt.value === val);
-        if (!option) return; // value not found in options, no-op
+        if (!option) return;
 
         const newSelected = exists
             ? selected.filter((sel) => sel.value !== val)
