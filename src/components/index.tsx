@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import * as React from 'react';
 import '../css/styles.css';
 
 export type MultiSelectOption<T extends string | number = string> = {
@@ -21,18 +21,18 @@ function CustomMultiSelectCheckbox<T extends string | number = string>({
     value = [],
     onChange,
 }: CustomMultiSelectCheckboxProps<T>) {
-    const [isOpen, setIsOpen] = useState < boolean > (false);
-    const [selected, setSelected] = useState < MultiSelectOption < T > [] > (value);
-    const [search, setSearch] = useState < string > ('');
-    const wrapperRef = useRef < HTMLDivElement | null > (null);
+    const [isOpen, setIsOpen] = React.useState < boolean > (false);
+    const [selected, setSelected] = React.useState < MultiSelectOption < T > [] > (value);
+    const [search, setSearch] = React.useState < string > ('');
+    const wrapperRef = React.useRef < HTMLDivElement | null > (null);
 
     // Keep internal state in sync if parent updates `value`
-    useEffect(() => {
+    React.useEffect(() => {
         setSelected(value);
     }, [value]);
 
     // Close on outside click
-    useEffect(() => {
+    React.useEffect(() => {
         const handleClickOutside = (e: MouseEvent) => {
             if (wrapperRef.current && e.target instanceof Node && !wrapperRef.current.contains(e.target)) {
                 setIsOpen(false);
