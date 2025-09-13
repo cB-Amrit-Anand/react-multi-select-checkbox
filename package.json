@@ -1,6 +1,6 @@
 {
   "name": "@amrit981/react-multi-select-checkbox",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "React multi select option using checkbox",
   "files": [
     "dist"
