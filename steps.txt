@@ -1,0 +1,4 @@
+npm run build - to build npm package
+npm pack -  confirm the bundle is correct.
+npm version patch
+npm publish --access public
