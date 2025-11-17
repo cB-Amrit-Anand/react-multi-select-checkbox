@@ -2,6 +2,14 @@
   "name": "@amrit981/react-multi-select-checkbox",
   "version": "0.0.7",
   "description": "React multi select option using checkbox",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cB-Amrit-Anand/react-multi-select-checkbox.git"
+  },
+  "homepage": "https://github.com/cB-Amrit-Anand/react-multi-select-checkbox#readme",
+  "bugs": {
+    "url": "https://github.com/cB-Amrit-Anand/react-multi-select-checkbox/issues"
+  },
   "files": [
     "dist"
   ],

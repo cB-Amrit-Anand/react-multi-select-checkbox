@@ -51,14 +51,3 @@ export default function CitiesFilter() {
 | `placeholder` | `string` | `'Select...'` | Text shown when nothing is selected. |
 | `value` | `Array<MultiSelectOption>` | `[]` | Controlled value for selected options. |
 | `onChange` | `(selected: MultiSelectOption[]) => void` | `undefined` | Called whenever the selection changes; receives the full selected array. |
-
-### Development
-```bash
-# install deps
-npm install
-
-# build the package (outputs to dist/)
-npm run build
-```
-
-The library uses Rollup for bundling with peer dependencies on `react` and `react-dom` (>=16.8 <20). Feel free to open issues or PRs if you spot bugs or have feature ideas!
