@@ -8,7 +8,10 @@ export default [
       require("@rollup/plugin-node-resolve").default(),
       require("@rollup/plugin-commonjs")(),
       require("@rollup/plugin-typescript").default({ tsconfig: "./tsconfig.json" }),
-      require("rollup-plugin-postcss")(),
+      require("rollup-plugin-postcss")({
+        extract: true,
+        minimize: true
+      }),
       require("@rollup/plugin-terser").default()
     ],
     output: [
