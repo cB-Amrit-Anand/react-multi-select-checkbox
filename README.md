@@ -51,3 +51,23 @@ export default function CitiesFilter() {
 | `placeholder` | `string` | `'Select...'` | Text shown when nothing is selected. |
 | `value` | `Array<MultiSelectOption>` | `[]` | Controlled value for selected options. |
 | `onChange` | `(selected: MultiSelectOption[]) => void` | `undefined` | Called whenever the selection changes; receives the full selected array. |
+
+### Development
+```bash
+# install deps
+npm install
+
+# build the package (outputs to dist/)
+npm run build
+```
+
+### Local Playground
+A Vite-powered demo app lives in `demo/` so you can interact with the component while you develop:
+
+```bash
+cd demo
+npm install   # first time only
+npm run dev   # serves http://localhost:5173
+```
+
+The demo imports the component straight from `../src`, so any edits hot-reload immediately. If you need to mimic the published package instead, run `npm run build` in the repo root and install the generated tarball inside `demo` with `npm install ../react-multi-select-checkbox-<version>.tgz`.
